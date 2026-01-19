@@ -1,0 +1,63 @@
+<div class="module-header" style="text-align: center; margin-bottom: 3rem;">
+    <div style="background: var(--gold-gradient); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; box-shadow: 0 10px 30px rgba(212,175,55,0.3);">
+        <i class="fas fa-info" style="font-size: 3rem; color: black;"></i>
+    </div>
+    <h2 style="color: var(--primary-gold); font-size: 2rem; margin-bottom: 0.5rem;">Información del Sistema</h2>
+    <p style="color: var(--text-muted);">MAKIK STUDIO FACT - Versión 1.0.4 Premium</p>
+</div>
+
+<div style="max-width: 800px; margin: 0 auto; display: grid; gap: 2rem;">
+    
+    <!-- Card Empresa -->
+    <div class="card gold-border" style="padding: 2.5rem; background: rgba(20,20,20,0.8); backdrop-filter: blur(10px);">
+        <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 1rem;">
+            <i class="fas fa-building" style="font-size: 2rem; color: var(--primary-gold);"></i>
+            <div>
+                <h3 style="color: white; margin: 0;">Datos de la Empresa</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Información legal registrada</p>
+            </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div>
+                <label style="display: block; color: var(--primary-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Razón Social</label>
+                <div id="info-razon" style="color: white; font-weight: 500; font-size: 1.1rem;">Cargando...</div>
+            </div>
+            <div>
+                <label style="display: block; color: var(--primary-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">RUC / Identificación</label>
+                <div id="info-ruc" style="color: white; font-weight: 500; font-size: 1.1rem;">Cargando...</div>
+            </div>
+            <div style="grid-column: span 2;">
+                <label style="display: block; color: var(--primary-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Dirección Matriz</label>
+                <div id="info-direccion" style="color: white; font-weight: 400;">Cargando...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Sistema -->
+    <div class="card gold-border" style="padding: 2.5rem; background: rgba(20,20,20,0.8); backdrop-filter: blur(10px);">
+        <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 1rem;">
+            <i class="fas fa-server" style="font-size: 1.8rem; color: var(--primary-gold);"></i>
+            <div>
+                <h3 style="color: white; margin: 0;">Estado de Facturación</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Configuración de conexión SRI</p>
+            </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div>
+                <label style="display: block; color: var(--primary-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Ambiente Actual</label>
+                <div id="info-ambiente" style="display: inline-block; padding: 4px 12px; border-radius: 20px; background: rgba(212,175,55,0.1); color: var(--primary-gold); font-size: 0.85rem; font-weight: 600;">PRUEBAS</div>
+            </div>
+            <div>
+                <label style="display: block; color: var(--primary-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Secuencial Factura</label>
+                <div id="info-secuencial" style="color: white; font-family: monospace; font-size: 1.2rem;">000000001</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 2rem; padding-bottom: 4rem;">
+        <p>&copy; 2026 MAKIK STUDIO. Todos los derechos reservados.</p>
+        <p>Desarrollado para la excelencia audiovisual.</p>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="module-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+    <h2 style="color: var(--primary-gold);"><i class="fas fa-file-invoice-dollar"></i> Historial de Facturación</h2>
+    <div style="display: flex; gap: 10px;">
+        <button class="btn btn-outline" onclick="loadVentas()">
+            <i class="fas fa-sync"></i> Actualizar
+        </button>
+    </div>
+</div>
+
+<div class="card gold-border">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Documento</th>
+                    <th>Cliente</th>
+                    <th style="text-align: right;">Total</th>
+                    <th style="text-align: center;">Estado</th>
+                    <th style="text-align: right;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="ventas-table-body">
+                <tr>
+                    <td colspan="6" style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                        <i class="fas fa-spinner fa-spin fa-2x"></i><br>Cargando registros...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

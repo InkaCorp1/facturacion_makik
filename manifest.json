@@ -1,0 +1,23 @@
+{
+  "name": "MAKIK STUDIO FACT",
+  "short_name": "MAKIK FACT",
+  "description": "Sistema de Facturación MAKIK STUDIO",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/604jKB39/makik-studio.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.ibb.co/604jKB39/makik-studio.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

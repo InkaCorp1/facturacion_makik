@@ -1,0 +1,106 @@
+<div class="pos-container" style="display: grid; grid-template-columns: 1fr 400px; gap: 2rem; height: 100%;">
+    
+    <!-- Columna Izquierda: Ingreso Manual -->
+    <div class="pos-entry">
+        <h2 style="margin-bottom: 2rem; color: var(--primary-gold); letter-spacing: 1px;">
+            <i class="fas fa-plus-circle"></i> Nuevo Ítem
+        </h2>
+        
+        <div class="card gold-border">
+            <form id="pos-item-form">
+                <div class="form-group">
+                    <label class="form-label">Descripción del Servicio / Producto</label>
+                    <input type="text" id="input-descripcion" class="form-input" placeholder="Ej. Producción Video Corporativo" required autofocus>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">Precio Unitario ($)</label>
+                        <input type="number" id="input-precio" class="form-input" step="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Cantidad</label>
+                        <input type="number" id="input-cantidad" class="form-input" value="1" min="1" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    <i class="fas fa-cart-plus"></i> Agregar al Carrito
+                </button>
+            </form>
+        </div>
+
+        <!-- Cliente Seleccionado -->
+        <div class="card gold-border" style="margin-top: 2rem;">
+            <h3 style="margin-bottom: 1.5rem; color: var(--primary-gold); font-size: 1rem;">
+                <i class="fas fa-user"></i> Cliente
+            </h3>
+            <div id="cliente-info" style="margin-bottom: 1rem; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                <div style="font-weight: 700; color: var(--primary-gold);" id="pos-cliente-nombre">CONSUMIDOR FINAL</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);" id="pos-cliente-cedula">9999999999999</div>
+            </div>
+            <div style="position: relative;">
+                <input type="text" id="search-cliente-pos" class="form-input" placeholder="Buscar cliente por cédula o nombre..." autocomplete="off">
+                <div id="clientes-results" class="search-results-dropdown"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Columna Derecha: Carrito y Totales -->
+    <div class="pos-summary" style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="card gold-border" style="flex: 1; display: flex; flex-direction: column;">
+            <h3 style="margin-bottom: 1.5rem; display: flex; justify-content: space-between;">
+                <span><i class="fas fa-shopping-cart"></i> Carrito</span>
+                <span id="cart-count" class="badge" style="background: var(--primary-gold); color: #000; padding: 2px 8px; border-radius: 20px; font-size: 0.8rem;">0</span>
+            </h3>
+
+            <div class="table-container" style="flex: 1; max-height: 400px; overflow-y: auto;">
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Detalle</th>
+                            <th style="text-align: right;">Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-body">
+                        <!-- Items dinámicos -->
+                        <tr>
+                            <td colspan="3" style="text-align: center; color: var(--text-muted); padding: 3rem;">
+                                <i class="fas fa-box-open fa-2x" style="display: block; margin-bottom: 10px;"></i>
+                                Carrito vacío
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cart-totals" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--text-muted);">
+                    <span>Subtotal (0%)</span>
+                    <span id="resumen-subtotal">$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 1.4rem; font-weight: 700; color: var(--primary-gold);">
+                    <span>TOTAL</span>
+                    <span id="resumen-total">$0.00</span>
+                </div>
+
+                <button class="btn btn-gold" style="width: 100%; justify-content: center; height: 55px;" onclick="openPaymentModal()">
+                    <i class="fas fa-check-double"></i> PROCESAR FACTURA
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+@media (max-width: 992px) {
+    .pos-container {
+        grid-template-columns: 1fr !important;
+        height: auto !important;
+    }
+    .pos-summary {
+        order: -1;
+    }
+}
+</style>

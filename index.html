@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MAKIK STUDIO | Facturación</title>
+    <meta name="theme-color" content="#141414">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/604jKB39/makik-studio.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/604jKB39/makik-studio.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="visibility: hidden;"> <!-- Ocultamos todo hasta que auth decida -->
+
+    <header id="main-header" style="display: none;">
+        <div class="logo-container">
+            <img src="https://i.ibb.co/35VZ7tR5/30cm-makik.png" alt="MAKIK STUDIO FACT">
+        </div>
+        <nav class="nav-links">
+            <a class="nav-item active" onclick="loadModule('punto-venta')">
+                <i class="fas fa-cash-register"></i> <span>POS</span>
+            </a>
+            <a class="nav-item" onclick="loadModule('ventas')">
+                <i class="fas fa-file-invoice-dollar"></i> <span>Facturas</span>
+            </a>
+            <a class="nav-item" onclick="loadModule('clientes')">
+                <i class="fas fa-users"></i> <span>Clientes</span>
+            </a>
+            <a class="nav-item" onclick="loadModule('info')">
+                <i class="fas fa-info-circle"></i> <span>Info</span>
+            </a>
+        </nav>
+        <div class="user-profile">
+            <span id="userEmail" style="font-size: 0.75rem; color: var(--text-muted); display: none; margin-right: 10px;"></span>
+            <button class="btn btn-outline" style="padding: 0.6rem 1rem; height: 45px; font-size: 0.9rem; border-radius: 10px;" onclick="handleLogout()">
+                <i class="fas fa-sign-out-alt"></i> <span class="hide-mobile">Salir</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="app-content">
+        <!-- El contenido se cargará dinámicamente aquí -->
+        <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+            <div style="text-align: center;">
+                <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--primary-gold); margin-bottom: 20px;"></i>
+                <p>Cargando Makik Studio Fact...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts Base -->
+    <script src="config.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
